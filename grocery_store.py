@@ -4,7 +4,12 @@ total=0
 discount=0.2
 dis_sub=0
 items_pur=[]
-rice=wheat=dal=potatoes=onion=tomato=soya=carrot=100
+rice=50
+wheat=50
+dal=55
+potatoes=onion=tomato=10
+soya=25
+carrot=15
 print("Hey Customer! Welcome to our grocery store:)")
 print("Grocery menu:")
 print("1.Rice -> 40Rs. per kg\n"
@@ -21,61 +26,88 @@ while (ans=="yes"):
     choice=input("\nenter ur choice:")
 
     if(choice=="1"):
-        items_pur.append("Rice")
         quant=int(input("Enter how many kgs do you want-"))
-        bill=40*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        rice=100-quant
-    elif(choice=="2"):
-        items_pur.append("Wheat")
+        rice=50-quant
+        if rice>0:
+            items_pur.append("Rice")
+            bill=40*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",rice)            
+        
+    elif(choice=="2"):        
         quant=int(input("Enter how many kgs do you want-"))
-        bill=50*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        wheat=100-quant
-    elif(choice=="3"):
-        items_pur.append("Dal")
+        wheat=50-quant
+        if wheat>0:
+            items_pur.append("Wheat")
+            bill=50*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",wheat)
+        
+    elif(choice=="3"):        
         quant=int(input("Enter how many kgs do you want-"))
-        bill=30*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        dal=100-quant
-    elif(choice=="4"):
-        items_pur.append("Potatoes")
+        dal=55-quant
+        if dal>0:
+            items_pur.append("Dal")
+            bill=30*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")        
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",dal)
+    elif(choice=="4"):        
         quant=int(input("Enter how many kgs do you want-"))
-        bill=25*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        potatoes=100-quant
-    elif(choice=="5"):
-        items_pur.append("Onion")
+        potatoes=10-quant
+        if potatoes>0:
+            items_pur.append("Potatoes")
+            bill=25*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")        
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",potatoes)
+            
+    elif(choice=="5"):        
         quant=int(input("Enter how many kgs do you want-"))
-        bill=35*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        onion=100-quant
-    elif(choice=="6"):
-        items_pur.append("Tomato")
+        onion=10-quant
+        if onion>0:
+            items_pur.append("Onion")
+            bill=35*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")        
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",onion)
+    elif(choice=="6"):        
         quant=int(input("Enter how many kgs do you want-"))
-        bill=30*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        tomato=100-quant
-    elif(choice=="7"):
-        items_pur.append("Soya Chunks")
+        tomato=10-quant
+        if tomato>0:
+            items_pur.append("Tomato")
+            bill=30*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")        
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",tomato)
+    elif(choice=="7"):        
         quant=int(input("Enter how many packets do you want-"))
-        bill=25*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        soya=100-quant
-    elif(choice=="8"):
-        items_pur.append("Carrot")
+        soya=25-quant
+        if soya>0:
+            items_pur.append("Soya Chunks")
+            bill=25*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")        
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",soya)
+    elif(choice=="8"):        
         quant=int(input("Enter how many kgs do you want-"))
-        bill=40*quant
-        total_bill.append(bill)
-        print("You will have to pay-",bill,"Rs.")
-        carrot=100-quant
+        carrot=15-quant
+        if carrot>0:
+            items_pur.append("Carrot")
+            bill=40*quant
+            total_bill.append(bill)
+            print("You will have to pay-",bill,"Rs.")        
+        else:
+            print("Sorry insufficient stock avalibility \nCurrent stock=",carrot)
     else:
         print("Please enter a valid choice")
 
